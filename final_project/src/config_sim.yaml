@@ -1,0 +1,44 @@
+mlflow :
+  use_mlflow : False
+  experiment_name : 'sindy_model'
+  run_name : 'sindy_base'
+
+data_path : other #../data/massSpringData_blue_2_5.csv  #other #../data/teaTrial12.csv #massSpringData_blue_2_5.csv
+
+E_SINDy : 
+  n_models : 10
+  point_ratio : 0.25
+  optimizer : 'ridge_gem'
+  random_seed : 42
+
+
+SINDy : 
+  poly_order : 5
+  include_t : False
+  include_poly_predictor : False 
+  order_predict : 0
+  thresh : 0.0001 
+  alpha : 1
+  use_preprocessing : True
+  k_spline : 5
+  spline_method : 'GEM'
+  interpolated_dt : 100
+
+stls_iterates : 5
+percent_thresh : 0.05
+
+derivative_method : spline
+
+smooth_coef : 0.5
+derivative_smooth_coef : 0.5
+
+ridge_gm : 
+  tol : 0.000001
+  alpha : 0.1
+
+ridge_jor :
+  omega : 1
+  tol : 0.000001
+
+ridge_cgm :
+  tol : 0.000001

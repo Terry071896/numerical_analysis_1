@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/terrycox/UofUCode/NumericalAnaylsisI/numerical_analysis_1/final_project/notebooks/mlruns/0/1e7284ad5f9e4ed399ba3089af6d1f53/artifacts
+end_time: 1670132409617
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1e7284ad5f9e4ed399ba3089af6d1f53
+run_name: respected-doe-205
+run_uuid: 1e7284ad5f9e4ed399ba3089af6d1f53
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670132336710
+status: 3
+tags: []
+user_id: terrycox

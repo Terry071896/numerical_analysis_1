@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/terrycox/UofUCode/NumericalAnaylsisI/numerical_analysis_1/final_project/notebooks/mlruns/0/220acf1d8ad445eaae8b55d51b1eebd8/artifacts
+end_time: 1670132329806
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 220acf1d8ad445eaae8b55d51b1eebd8
+run_name: flawless-wren-931
+run_uuid: 220acf1d8ad445eaae8b55d51b1eebd8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1670132285342
+status: 3
+tags: []
+user_id: terrycox
