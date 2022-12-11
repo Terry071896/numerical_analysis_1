@@ -408,66 +408,6 @@ class BaseSINDy(object):
             mlflow.log_metrics({f'beta/{k}':v for k, v in zip(self.labs, x)}, step=i)
             mlflow.log_metric('error', err, step=i)
 
-    # def get_error(self, A,b,x):
-    #     return np.linalg.norm(b-A*x, 2)
-
-    # def gradient_method_iteration(self, A,b,x_0, alpha=None):
-    #     r_k = b-A*x_0
-    #     if alpha is None:
-    #         alpha = np.dot(r_k.T, r_k)/np.dot(r_k.T, A*r_k)
-    #     return x_0 + alpha[0,0]*r_k
-
-    # def gradient_method(self, A,b,x_0, tol=1e-6, alpha=None):
-    #     results = {'x_k' : [x_0], 'error' : [self.get_error(A,b,x_0)], 'iterations' : 0}
-    #     #mlflow.log_metrics({f'beta/{k}':v for k, v in zip(self.labs, results['x_k'][-1])}, step=results['iterations'][-1])
-    #     #mlflow.log_metric('error', results['error'][-1], step=results['iterations'][-1])
-    #     while(results['error'][-1] > tol):
-    #         results['x_k'].append(self.gradient_method_iteration(A,b,results['x_k'][-1], alpha=alpha))
-    #         results['error'].append(self.get_error(A,b,results['x_k'][-1]))
-    #         results['iterations'] += 1
-    #         #mlflow.log_metrics({k:v for k, v in zip(self.labs, results['x_k'][-1])}, step=results['iterations'][-1])
-    #         #mlflow.log_metric('error', results['error'][-1], step=results['iterations'][-1])
-    #     return results['x_k'][-1], results
-                
-    # def conj_gradient_method(self, A,b,x_0, tol=1e-6, alpha=None):
-    #     results = {'x_k' : [x_0], 'error' : [self.get_error(A,b,x_0)], 'iterations' : 0}
-    #     p = b-A*x_0
-    #     while(results['error'][-1] > tol):
-    #         r = b-A*results['x_k'][-1]
-    #         alpha = np.dot(p.T, r)/np.dot(p.T, A*p)
-    #         r_1 = r - alpha[0,0]*A*p
-    #         beta_k = np.dot((A*p).T, r_1)/np.dot((A*p).T, p)
-    #         #print(beta_k)
-            
-    #         x_1 = results['x_k'][-1] + alpha[0,0]*p
-    #         p = r_1 - beta_k[0,0]*p
-            
-    #         results['x_k'].append(x_1)
-    #         results['error'].append(self.get_error(A,b,x_1))
-    #         results['iterations'] += 1
-    #         #p = get_next_dir_p(A,b,x_0,p)
-    #         #print(results['error'][-1])
-    #     return results['x_k'][-1], results
-
-    # def get_D(self, A):
-    #     D = A*1
-    #     for i, a in enumerate(A):
-    #         for j, x in enumerate(a.T):
-    #             if i != j:
-    #                 D[i,j] = 0
-    #     #print('D:', D)
-    #     return D
-
-    # def JOR_iteration(self, A,b,x_0, omega=1):
-    #     return x_0 + omega*np.linalg.inv(self.get_D(A))*(b - A*x_0)
-
-    # def JOR(self, A,b,x_0,omega=1,tol=1e-6):
-    #     results = {'x_k' : [x_0], 'error' : [self.get_error(A,b,x_0)], 'iterations' : 0}
-    #     while(results['error'][-1] > tol):
-    #         results['x_k'].append(self.JOR_iteration(A,b,results['x_k'][-1],omega))
-    #         results['error'].append(self.get_error(A,b,results['x_k'][-1]))
-    #         results['iterations'] += 1
-    #     return results['x_k'][-1], results
             
     def fit(self, t, X, optimizer=None, opti_vars=None, iterates=3):
         if optimizer is None:
